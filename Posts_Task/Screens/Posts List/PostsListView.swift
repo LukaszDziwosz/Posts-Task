@@ -15,7 +15,7 @@ struct PostsListView: View {
         NavigationView {
             List{
              ForEach(viewModel.posts, id: \.id) { post in
-                PostCell(post: post)
+                 PostCell(post: post, user: <#User#>)
                     }
         }
     }
