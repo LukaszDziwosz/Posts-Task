@@ -8,18 +8,27 @@
 import Foundation
 import Combine
 
+
+
 final class PostsListViewModel: ObservableObject {
     
     @Published var posts = [Post]()
-    var networkGeneric: NetworkGenericProtocol
+    private var networkManager: NetworkManagerProtocol
+    private var cancellable: AnyCancellable?
     
-    init(networkGeneric: NetworkGenericProtocol = NetworkGeneric.shared) {
-        self.networkGeneric = networkGeneric
-        //loadPosts()
+    init(networkManager: NetworkManagerProtocol = NetworkManager.shared) {
+        self.networkManager = networkManager
+        getPosts()
     }
     
-    func loadPosts() -> AnyPublisher<[Post], Error> {
-        networkGeneric.load(url: URL(string: "https://jsonplaceholder.typicode.com/posts")!)
+    private func getPosts(){
+        cancellable = networkManager.loadPosts()
+            .sink(receiveCompletion: { error in
+                print(error)
+            }, receiveValue: {[weak self] posts in
+                self?.posts += posts
+            })
     }
-    
 }
+
+

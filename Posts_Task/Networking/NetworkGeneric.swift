@@ -14,7 +14,6 @@ protocol NetworkGenericProtocol {
 
 struct NetworkGeneric: NetworkGenericProtocol {
     
-    static let shared: NetworkGenericProtocol = NetworkGeneric()
     
     func load<T: Decodable>(url: URL) -> AnyPublisher<T, Error> {
         return URLSession.shared.dataTaskPublisher(for: url)
@@ -26,6 +25,7 @@ struct NetworkGeneric: NetworkGenericProtocol {
                 return result.data
             }
             .decode(type: T.self, decoder: JSONDecoder())
+            .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
 }
