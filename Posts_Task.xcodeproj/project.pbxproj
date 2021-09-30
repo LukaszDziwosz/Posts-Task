@@ -16,8 +16,9 @@
 		D02857B627062E5F00E770DA /* Posts_TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02857B527062E5F00E770DA /* Posts_TaskTests.swift */; };
 		D02857C027062E5F00E770DA /* Posts_TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02857BF27062E5F00E770DA /* Posts_TaskUITests.swift */; };
 		D02857C227062E5F00E770DA /* Posts_TaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02857C127062E5F00E770DA /* Posts_TaskUITestsLaunchTests.swift */; };
-		D02857CF27062F5200E770DA /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02857CE27062F5200E770DA /* Posts.swift */; };
+		D02857CF27062F5200E770DA /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02857CE27062F5200E770DA /* Post.swift */; };
 		D02857D227063AED00E770DA /* NetworkGeneric.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02857D127063AED00E770DA /* NetworkGeneric.swift */; };
+		D02857D527063D1900E770DA /* PostsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02857D427063D1900E770DA /* PostsListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,8 +51,9 @@
 		D02857BB27062E5F00E770DA /* Posts_TaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Posts_TaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D02857BF27062E5F00E770DA /* Posts_TaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts_TaskUITests.swift; sourceTree = "<group>"; };
 		D02857C127062E5F00E770DA /* Posts_TaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts_TaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		D02857CE27062F5200E770DA /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
+		D02857CE27062F5200E770DA /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		D02857D127063AED00E770DA /* NetworkGeneric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkGeneric.swift; sourceTree = "<group>"; };
+		D02857D427063D1900E770DA /* PostsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				D028579F27062E5B00E770DA /* Posts_TaskApp.swift */,
-				D02857A127062E5B00E770DA /* PostsListView.swift */,
+				D02857D627063D2B00E770DA /* Screens */,
 				D02857A327062E5F00E770DA /* Assets.xcassets */,
 				D02857A827062E5F00E770DA /* Persistence.swift */,
 				D02857A527062E5F00E770DA /* Preview Content */,
@@ -142,7 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				D02857AA27062E5F00E770DA /* Posts_Task.xcdatamodeld */,
-				D02857CE27062F5200E770DA /* Posts.swift */,
+				D02857CE27062F5200E770DA /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -153,6 +155,23 @@
 				D02857D127063AED00E770DA /* NetworkGeneric.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		D02857D627063D2B00E770DA /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				D02857D727063D4300E770DA /* Posts List */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		D02857D727063D4300E770DA /* Posts List */ = {
+			isa = PBXGroup;
+			children = (
+				D02857D427063D1900E770DA /* PostsListViewModel.swift */,
+				D02857A127062E5B00E770DA /* PostsListView.swift */,
+			);
+			path = "Posts List";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,9 +304,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D02857D527063D1900E770DA /* PostsListViewModel.swift in Sources */,
 				D02857A927062E5F00E770DA /* Persistence.swift in Sources */,
 				D02857A227062E5B00E770DA /* PostsListView.swift in Sources */,
-				D02857CF27062F5200E770DA /* Posts.swift in Sources */,
+				D02857CF27062F5200E770DA /* Post.swift in Sources */,
 				D02857AC27062E5F00E770DA /* Posts_Task.xcdatamodeld in Sources */,
 				D02857D227063AED00E770DA /* NetworkGeneric.swift in Sources */,
 				D02857A027062E5B00E770DA /* Posts_TaskApp.swift in Sources */,

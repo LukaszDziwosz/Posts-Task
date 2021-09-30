@@ -14,7 +14,6 @@ struct Posts_TaskApp: App {
     var body: some Scene {
         WindowGroup {
             PostsListView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
