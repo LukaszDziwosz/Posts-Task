@@ -8,8 +8,6 @@
 import Foundation
 import Combine
 
-
-
 final class PostsListViewModel: ObservableObject {
     
     @Published var posts = [Post]()
