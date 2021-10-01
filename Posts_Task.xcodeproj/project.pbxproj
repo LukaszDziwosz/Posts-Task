@@ -17,7 +17,6 @@
 		D02857C027062E5F00E770DA /* Posts_TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02857BF27062E5F00E770DA /* Posts_TaskUITests.swift */; };
 		D02857C227062E5F00E770DA /* Posts_TaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02857C127062E5F00E770DA /* Posts_TaskUITestsLaunchTests.swift */; };
 		D02857CF27062F5200E770DA /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02857CE27062F5200E770DA /* Post.swift */; };
-		D02857D227063AED00E770DA /* NetworkGeneric.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02857D127063AED00E770DA /* NetworkGeneric.swift */; };
 		D02857D527063D1900E770DA /* PostsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02857D427063D1900E770DA /* PostsListViewModel.swift */; };
 		D02857D92706539F00E770DA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02857D82706539F00E770DA /* NetworkManager.swift */; };
 		D02857DC27065E0B00E770DA /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02857DB27065E0B00E770DA /* PostCell.swift */; };
@@ -55,7 +54,6 @@
 		D02857BF27062E5F00E770DA /* Posts_TaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts_TaskUITests.swift; sourceTree = "<group>"; };
 		D02857C127062E5F00E770DA /* Posts_TaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts_TaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D02857CE27062F5200E770DA /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		D02857D127063AED00E770DA /* NetworkGeneric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkGeneric.swift; sourceTree = "<group>"; };
 		D02857D427063D1900E770DA /* PostsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListViewModel.swift; sourceTree = "<group>"; };
 		D02857D82706539F00E770DA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D02857DB27065E0B00E770DA /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
@@ -161,7 +159,6 @@
 			isa = PBXGroup;
 			children = (
 				D02857D82706539F00E770DA /* NetworkManager.swift */,
-				D02857D127063AED00E770DA /* NetworkGeneric.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -328,7 +325,6 @@
 				D02857D92706539F00E770DA /* NetworkManager.swift in Sources */,
 				D02857DC27065E0B00E770DA /* PostCell.swift in Sources */,
 				D02857AC27062E5F00E770DA /* Posts_Task.xcdatamodeld in Sources */,
-				D02857D227063AED00E770DA /* NetworkGeneric.swift in Sources */,
 				D02857DE2706682400E770DA /* User.swift in Sources */,
 				D02857A027062E5B00E770DA /* Posts_TaskApp.swift in Sources */,
 			);

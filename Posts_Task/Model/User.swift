@@ -9,6 +9,7 @@ import Foundation
 import CoreLocation
 
 struct User: Codable {
+    
     let id: Int
     let name: String
     let username: String

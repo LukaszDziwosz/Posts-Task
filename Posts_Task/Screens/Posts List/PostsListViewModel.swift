@@ -20,11 +20,15 @@ final class PostsListViewModel: ObservableObject {
     }
     
     private func getPosts(){
-        cancellable = networkManager.loadPosts()
-            .sink(receiveCompletion: { error in
-                print(error)
-            }, receiveValue: {[weak self] posts in
-                self?.posts += posts
+        cancellable = networkManager.loadUsersDetails()
+            .mapError({ (error) -> Error in
+                print(error.localizedDescription)
+                          return error
+                      })
+            .sink(receiveCompletion: { _ in }
+            , receiveValue: {[weak self] posts in
+                print(posts)
+//                self?.posts = posts
             })
     }
 }
