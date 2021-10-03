@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Post: Codable {
-    let userId: Int
+struct Post: Codable, Equatable{
+    var userId: Int
     let id: Int
     let title: String
     let body: String

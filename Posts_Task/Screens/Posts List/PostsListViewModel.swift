@@ -11,6 +11,7 @@ import Combine
 final class PostsListViewModel: ObservableObject {
     
     @Published var posts = [Post]()
+    @Published var users = [User]()
     private var networkManager: NetworkManagerProtocol
     private var cancellable: AnyCancellable?
     
@@ -20,7 +21,7 @@ final class PostsListViewModel: ObservableObject {
     }
     
     private func getPosts(){
-        cancellable = networkManager.loadUsersDetails()
+        cancellable = networkManager.loadPosts()
             .mapError({ (error) -> Error in
                 print(error.localizedDescription)
                           return error
@@ -28,9 +29,35 @@ final class PostsListViewModel: ObservableObject {
             .sink(receiveCompletion: { _ in }
             , receiveValue: {[weak self] posts in
                 print(posts)
-//                self?.posts = posts
+                self?.posts = posts
+                self?.getUsers()
             })
+        
     }
+    private func getUsers() {
+       cancellable = $posts
+            .flatMap { [unowned self] posts in
+                Publishers.Sequence(sequence: posts.map { self.networkManager.loadUsers(for: $0.userId)})
+                .flatMap { $0 }
+                .collect()
+            }
+            .eraseToAnyPublisher()
+            .mapError({ (error) -> Error in
+                print(error.localizedDescription)
+                          return error
+                      })
+            .sink { completion in
+                print(completion)
+            } receiveValue: { value in
+                print(value)
+
+            }
+
+         
+           
+    }
+    
+
 }
 
 
