@@ -14,9 +14,9 @@ struct PostsListView: View {
     var body: some View {
         NavigationView {
             List{
-//             ForEach(viewModel.users, id: \.id) { user in
-//                 PostCell(user: user)
-//                    }
+                ForEach(viewModel.posts, id: \.id) { post in
+                 PostCell(post: post)
+                    }
         }
     }
     }

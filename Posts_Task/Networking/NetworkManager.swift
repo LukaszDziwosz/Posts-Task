@@ -10,24 +10,32 @@ import Combine
 
 protocol NetworkManagerProtocol {
     func loadPosts() -> AnyPublisher<[Post], Error>
-    func loadUsers(for userId: Int) -> AnyPublisher<User,Error>
+    func loadUser(for userId: Int) -> AnyPublisher<User,Error>
 }
 
-struct NetworkManager: NetworkManagerProtocol {
+class NetworkManager: NetworkManagerProtocol {
     
     
+ 
     static let shared: NetworkManagerProtocol = NetworkManager()
     
     
     func loadPosts() -> AnyPublisher<[Post], Error> {
         load(url: URL(string: "https://jsonplaceholder.typicode.com/posts")!)
     }
-    func loadUsers(for userId: Int) -> AnyPublisher<User,Error> {
+    func loadPost(for id: Int) -> AnyPublisher<Post,Error> {
+        load(url: URL(string: "https://jsonplaceholder.typicode.com/posts/\(id)")!)
+    }
+    func loadUser(for userId: Int) -> AnyPublisher<User, Error> {
         load(url: URL(string: "https://jsonplaceholder.typicode.com/users/\(userId)")!)
     }
+    func loadUsers() -> AnyPublisher<[User], Error> {
+        load(url: URL(string: "https://jsonplaceholder.typicode.com/users")!)
+    }
+   
 
    
-    func load<T: Decodable>(url: URL) -> AnyPublisher<T, Error> {
+    private func load<T: Decodable>(url: URL) -> AnyPublisher<T, Error> {
         return URLSession.shared.dataTaskPublisher(for: url)
             .tryMap { result in
                 guard let response = result.response as? HTTPURLResponse,

@@ -108,9 +108,8 @@
 		D028579E27062E5B00E770DA /* Posts_Task */ = {
 			isa = PBXGroup;
 			children = (
-				D02857DA27065DCF00E770DA /* Views */,
 				D028579F27062E5B00E770DA /* Posts_TaskApp.swift */,
-				D02857D627063D2B00E770DA /* Screens */,
+				D02857DA27065DCF00E770DA /* Views */,
 				D02857A327062E5F00E770DA /* Assets.xcassets */,
 				D02857A827062E5F00E770DA /* Persistence.swift */,
 				D02857A527062E5F00E770DA /* Preview Content */,
@@ -183,6 +182,7 @@
 		D02857DA27065DCF00E770DA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D02857D627063D2B00E770DA /* Screens */,
 				D02857DB27065E0B00E770DA /* PostCell.swift */,
 			);
 			path = Views;

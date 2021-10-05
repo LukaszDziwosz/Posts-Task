@@ -12,6 +12,7 @@ final class PostsListViewModel: ObservableObject {
     
     @Published var posts = [Post]()
     @Published var users = [User]()
+
     private var networkManager: NetworkManagerProtocol
     private var cancellable: AnyCancellable?
     
@@ -32,12 +33,14 @@ final class PostsListViewModel: ObservableObject {
                 self?.posts = posts
                 self?.getUsers()
             })
-        
+
     }
     private func getUsers() {
        cancellable = $posts
             .flatMap { [unowned self] posts in
-                Publishers.Sequence(sequence: posts.map { self.networkManager.loadUsers(for: $0.userId)})
+                Publishers.Sequence(sequence: posts
+                                        .map { self.networkManager.loadUser(for: $0.userId)}
+                )
                 .flatMap { $0 }
                 .collect()
             }
@@ -50,12 +53,10 @@ final class PostsListViewModel: ObservableObject {
                 print(completion)
             } receiveValue: { value in
                 print(value)
-
             }
-
-         
-           
     }
+
+    
     
 
 }

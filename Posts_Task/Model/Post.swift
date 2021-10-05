@@ -7,8 +7,12 @@
 
 import Foundation
 
-struct Post: Codable, Equatable{
-    var userId: Int
+protocol Common {
+    var userId: Int { get }
+}
+
+struct Post: Common, Codable, Equatable {
+    let userId: Int
     let id: Int
     let title: String
     let body: String

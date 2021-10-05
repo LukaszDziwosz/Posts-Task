@@ -7,9 +7,15 @@
 
 import Foundation
 
-struct User: Codable {
+struct User: Common, Codable {
     
-    let id: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case userId = "id"
+        case name, username, email, address, phone, website, company
+    }
+    //var posts: [Post]
+    let userId: Int
     let name: String
     let username: String
     let email: String
